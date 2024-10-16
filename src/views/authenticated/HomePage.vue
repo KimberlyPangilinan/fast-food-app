@@ -1,4 +1,7 @@
 <template>
+  <div class="absolute bottom-6 right-6 z-[100]">
+    <Button color="primary" text="Order now" to="Products"/>
+  </div>
   <base-layout>
     <!--  ------------------------ Banner/Greetings Section ------------------------  -->
     <ion-grid>
@@ -6,9 +9,9 @@
         <ion-col size="auto">
           <ion-img src="assets/images/Logo.png" alt="logo" class="w-[90px] object-cover"></ion-img>
         </ion-col>
-        <ion-col size="auto" class="p-2">
+        <ion-col size="auto">
           <ion-text>Anneoyong, Chou!</ion-text>
-          <ion-title class="p-0 font-bold text-2xl">What do you want<br /> to eat?</ion-title>
+          <h1 class="p-0 font-bold text-2xl">What do you want<br /> to eat?</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -18,14 +21,10 @@
     </ion-searchbar>
 
     <!--  ------------------------- Special Offers Section -------------------------  -->
-    <section class="p-2">
-      <div class="flex justify-between">
-        <ion-title class="p-0 text-[20px] font-bold">Special Offers </ion-title>
-        <ion-row>
-          <ion-col size="12">
-            <Button color="primary" text="View all" fill="clear" />
-          </ion-col>
-        </ion-row>
+    <section class="px-2 ">
+      <div class="flex justify-between items-center">
+        <h2 class="p-0 text-[20px] font-bold">Special Offers </h2>
+        <Button color="primary" text="View all" fill="clear" />
       </div>
       <ion-list :inset="false" lines="none" class="max-w-[100vw] gap-2 overflow-scroll flex">
         <Card v-for="(offer, index) in specialOffers" :key="index" :item="offer" width="300px" height="0" />
@@ -33,14 +32,10 @@
     </section>
 
     <!--  ---------------------------- Category Section ----------------------------  -->
-    <section class="p-2">
-      <div class="flex justify-between">
-        <ion-title class="p-0 text-[20px] font-bold">Category </ion-title>
-        <ion-row>
-          <ion-col size="12">
-            <Button color="primary" text="View all" fill="clear" />
-          </ion-col>
-        </ion-row>
+    <section class="px-2 ">
+      <div class="flex justify-between items-center">
+        <h2 class="p-0 text-[20px] font-bold">Category </h2>
+        <Button color="primary" text="View all" fill="clear" />
       </div>
       <ion-list :inset="false" lines="none" class="max-w-[100vw]  gap-2 overflow-x-scroll overflow-y-hidden flex">
         <Card v-for="(category, index) in categories" :key="index" height="30vh" :item="category" />
@@ -48,19 +43,17 @@
     </section>
 
     <!--  --------------------------- What's New Section ---------------------------  -->
-    <section class="p-2">
-      <div class="flex justify-between">
-        <ion-title class="p-0 text-[20px] font-bold">What's New </ion-title>
-        <ion-row>
-          <ion-col size="12">
-            <Button color="primary" text="View all" fill="clear" />
-          </ion-col>
-        </ion-row>
+    <section class="px-2 ">
+      <div class="flex justify-between items-center">
+        <h2 class="p-0 text-[20px] font-bold">What's New </h2>
+        <Button color="primary" text="View all" fill="clear" />
       </div>
       <ion-list :inset="false" lines="none" class="max-w-[100vw] gap-2 overflow-x-scroll overflow-y-hidden flex">
         <Card v-for="(offer, index) in newOffers" :key="index" :item="offer" height="20vh" width="100%" />
       </ion-list>
     </section>
+    <ProductList :items="products" title="Most Popular"/>
+    
   </base-layout>
 </template>
 
@@ -81,11 +74,12 @@
   import BaseLayout from '@/components/base/BaseLayout.vue'
   import Button from "@/components/Button.vue";
   import Card from "@/components/cards/Card.vue";
-  
+  import ProductList from "@/components/products/ProductList.vue";
   import {
     SPECIAL_OFFERS,
     CATEGORIES,
-    NEW
+    NEW, 
+    PRODUCTS
   } from '@/helpers/index.js';
     
   const router = useRouter()
@@ -94,11 +88,13 @@
   const specialOffers = ref()
   const categories = ref()
   const newOffers = ref()
+  const products = ref()
   
   onMounted(() => {
     fetchSpecialOffers();
     fetchCategories();
     fetchNew();
+    fetchProducts();
   })
 
   const fetchSpecialOffers = async () => {
@@ -109,6 +105,9 @@
   }
   const fetchNew = async () => {
     newOffers.value = NEW
+  }
+  const fetchProducts = async () => {
+    products.value = PRODUCTS.splice(0,4)
   }
 
   const onSearchInput = (event) => {

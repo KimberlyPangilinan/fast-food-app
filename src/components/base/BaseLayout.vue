@@ -2,50 +2,110 @@
   <ion-menu content-id="main-content">
     <ion-header>
       <ion-content class="ion-padding">
-    </ion-content>
-      <ion-toolbar>
-        <ion-title>Menu Content</ion-title>
-      </ion-toolbar>
+      </ion-content>
+
     </ion-header>
-    <ion-content class="ion-padding">This is the menu content.</ion-content>
+    <ion-content class="ion-padding">
+      <div class="flex flex-col">
+        <div class="flex justify-between">
+          <img class="rounded-full w-14 h-14" alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <div class="w-[70%] flex items-center justify-around">
+            <ion-img src="assets/images/crown1.png" />
+            <ion-text class="text-normal font-bold">0 points</ion-text>
+            <ion-icon :icon="chevronForwardOutline" color="primary"></ion-icon>
+          </div>
+        </div>
+        <div class="py-2">
+          <h2 class="font-bold text-2xl">Chou Tzuyu</h2>
+          <ion-text class="text-neutral-500 text-sm">+63 912 345 6789</ion-text>
+        </div>
+        <ul>
+          <li v-for="item in MENU" @click="navigate(item.to)" class="flex gap-4 py-3 items-center hover:!bg-red-50">
+            <ion-icon :icon="item.icon" color="primary"></ion-icon>
+            <ion-text class="font-bold text-sm">{{item.name}}</ion-text>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
   </ion-menu>
   <ion-page id="main-content">
-    <ion-header class="shadow-none px-4 py-2 flex justify-between items-center">
-      <ion-toolbar class="w-full">
+    <div class="shadow-none p-4 flex justify-between items-center">
+      <div class="w-full flex items-center gap-2">
         <ion-buttons slot="start">
-          <ion-menu-toggle class="flex flex-col gap-1">
+          <ion-menu-toggle>
+            <div class="flex flex-col gap-1">
               <div v-for="i in 2" :key="i" class="bg-red-600 w-6 rounded-full h-1"></div>
+            </div>
           </ion-menu-toggle>
+          <ion-text class="ml-4 text-2xl font-bold">{{ props.title }}</ion-text>
         </ion-buttons>
-      </ion-toolbar>
-       <div class="w-full flex items-center gap-2">
-          <ion-img src="assets/images/crown1.png"/>
-          <ion-text class="text-normal font-bold">0 points</ion-text>
+      </div>
+      <div v-show="props.type == 'default'" class="w-full flex items-center gap-2">
+        <ion-img src="assets/images/crown1.png" />
+        <ion-text class="text-normal font-bold">0 points</ion-text>
       </div>
       <div class="w-full flex justify-end">
-        <ion-avatar class="w-8 h-8">
+        <ion-avatar v-show="props.type == 'default'" class="w-8 h-8">
           <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
+        <ion-avatar v-show="props.type == 'order'" class="w-8 h-10">
+          <img alt="order" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
       </div>
-    </ion-header>
-    <ion-content class="ion-padding"><slot/> </ion-content>
+    </div>
+    <ion-content class="ion-padding">
+      <div class="space-y-2">
+        <slot />
+      </div>
+    </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonImg,IonAvatar,IonButtons, IonContent, IonHeader, IonMenu,IonMenuToggle,IonButton, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonMenu,
-      IonMenuButton,
-      IonPage,
-      IonTitle,
-      IonToolbar,
+<script setup>
+  import {
+    defineProps
+  } from "vue";
+  import {
+    chevronForwardOutline
+  } from "ionicons/icons";
+  import {
+    MENU
+  } from '@/helpers/index.js'
+  import {
+    useRouter
+  } from "vue-router";
+  import {
+    IonText,
+    IonIcon,
+    IonImg,
+    IonAvatar,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenu,
+    IonMenuToggle,
+    IonButton,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar
+  } from '@ionic/vue';
+  const props = defineProps({
+    title: {
+      type: String,
     },
-  });
+    type: {
+      type: Boolean,
+      required: true,
+      default: 'default'
+    },
+    isOrder: {
+      type: Boolean
+    },
+  })
+  const router = useRouter();
+
+  function navigate(link) {
+    router.push(link);
+  }
 </script>

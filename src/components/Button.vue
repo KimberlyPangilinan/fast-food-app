@@ -1,6 +1,7 @@
 <template>
     <ion-button
       class="flex items-center justify-center capitalize"
+      :style="props.size == 'small' ? { fontSize: '12px', padding: '0px' } : {}"
       :color="color"
       :fill="fill"
       :disabled="isLoading"
@@ -36,6 +37,10 @@
       type: String,
       default: "solid",
     },
+    size: {
+      type: String,
+      default: "regular",
+    },
     to: {
       type: [String, Object],
       required: false,
@@ -47,8 +52,9 @@
   
   const navigateTo = () => {
     if (!to.value) return;
-    router.push(to.value);
+    router.push({ path: to.value, replace: true });
   }
+  
   
   </script>
   
