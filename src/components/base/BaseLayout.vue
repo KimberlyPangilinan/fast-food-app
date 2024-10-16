@@ -19,12 +19,12 @@
           <h2 class="font-bold text-2xl">Chou Tzuyu</h2>
           <ion-text class="text-neutral-500 text-sm">+63 912 345 6789</ion-text>
         </div>
-        <ul>
-          <li v-for="item in MENU" @click="navigate(item.to)" class="flex gap-4 py-3 items-center hover:!bg-red-50">
+        <ion-list lines="none">
+          <ion-item  v-for="item in MENU" @click="navigate(item.to)" class="ion-no-padding py-1 items-center hover:!bg-red-50">
             <ion-icon :icon="item.icon" color="primary"></ion-icon>
-            <ion-text class="font-bold text-sm">{{item.name}}</ion-text>
-          </li>
-        </ul>
+            <ion-text class="ion-padding-start font-bold">{{item.name}}</ion-text>
+          </ion-item>
+        </ion-list>
       </div>
     </ion-content>
   </ion-menu>
@@ -88,7 +88,9 @@
     IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonList,
+    IonItem
   } from '@ionic/vue';
   const props = defineProps({
     title: {

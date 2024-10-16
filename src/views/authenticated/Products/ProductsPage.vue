@@ -1,5 +1,5 @@
 <template>
-    <base-layout type="order" title="Our Foods">
+    <base-layout :key="$route.fullPath" type="order" title="Our Foods">
         <div class="space-y-0 mt-[-10px]">
         <!-- Search bar -->
         <ion-searchbar :debounce="1000" @ionInput="handleInput" class="custom" />
@@ -40,7 +40,7 @@
     import { PRODUCTS } from '@/helpers/index.js';
     import Button from '@/components/Button.vue';
     
-    const products = ref([]);
+    const products = ref(PRODUCTS);
     const activeFilter = ref('')
     
     onMounted(() => {

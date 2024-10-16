@@ -39,43 +39,66 @@ export const PRODUCTS = [
         name: 'Steak Fries Veggies',
         price: 175  ,
         type: 'Meat',
-        img: 'assets/images/products/food-png-2951 1.png'
+        img: 'assets/images/products/food-png-2951 1.png',
+        id: 1,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
     },
     {   name: 'Chicken Salad',
         price: 178  ,
         type: 'Meat',
-        img: 'assets/images/products/pngegg 1.png'
+        img: 'assets/images/products/pngegg 1.png',
+        id: 2,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   name: 'Fried Chicken',
         price: 145  ,
         type: 'Meat',
-        img: 'assets/images/products/pngkit_non-veg-thali-png_2607929 1.png'
+        img: 'assets/images/products/pngkit_non-veg-thali-png_2607929 1.png',
+        id: 3,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   name: 'Sorbetes Prima Premium',
         price: 125  ,
         type: 'Meat',
-        img: 'assets/images/products/pngwing 1.png'
+        img: 'assets/images/products/pngwing 1.png',
+        id: 4,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   
         name: 'Steak Fries Veggies',
         price: 175  ,
         type: 'Meat',
-        img: 'assets/images/products/food-png-2951 1.png'
+        img: 'assets/images/products/food-png-2951 1.png',
+        id: 5,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   name: 'Chicken Salad',
         price: 178  ,
         type: 'Meat',
-        img: 'assets/images/products/pngegg 1.png'
+        img: 'assets/images/products/pngegg 1.png',
+        id: 6,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   name: 'Fried Chicken',
         price: 145  ,
         type: 'Meat',
-        img: 'assets/images/products/pngkit_non-veg-thali-png_2607929 1.png'
+        img: 'assets/images/products/pngkit_non-veg-thali-png_2607929 1.png',
+        id: 7,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
     {   name: 'Sorbetes Prima Premium',
         price: 125  ,
         type: 'Meat',
-        img: 'assets/images/products/pngwing 1.png'
+        img: 'assets/images/products/pngwing 1.png',
+        id: 8,
+        description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam eu aliquam ipsum, sed accumsan metus. Maecenas neque nunc, tincidunt nec dui ac, rutrum consectetur ligula.'
+        
     },
 ]
 import {

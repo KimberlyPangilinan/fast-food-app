@@ -52,7 +52,7 @@
         <Card v-for="(offer, index) in newOffers" :key="index" :item="offer" height="20vh" width="100%" />
       </ion-list>
     </section>
-    <ProductList :items="products" title="Most Popular"/>
+    <ProductList :items="popularProducts" title="Most Popular"/>
     
   </base-layout>
 </template>
@@ -88,7 +88,7 @@
   const specialOffers = ref()
   const categories = ref()
   const newOffers = ref()
-  const products = ref()
+  const popularProducts = ref()
   
   onMounted(() => {
     fetchSpecialOffers();
@@ -107,7 +107,7 @@
     newOffers.value = NEW
   }
   const fetchProducts = async () => {
-    products.value = PRODUCTS.splice(0,4)
+    popularProducts.value = [...PRODUCTS].slice(0, 4);
   }
 
   const onSearchInput = (event) => {
