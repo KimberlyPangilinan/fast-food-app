@@ -101,10 +101,19 @@ export const PRODUCTS = [
         
     },
 ]
-import {
-    home,pizzaOutline, notificationsOutline
-  } from "ionicons/icons";
-  
+import { 
+    home, 
+    pizzaOutline, 
+    notificationsOutline, 
+    storefrontOutline, 
+    helpCircleOutline, 
+    cartOutline, 
+    personOutline, 
+    heartOutline, 
+    locationOutline, 
+    timeOutline 
+} from 'ionicons/icons';
+
 export const MENU = [
     {
         icon: home,
@@ -121,7 +130,49 @@ export const MENU = [
     {
         icon: notificationsOutline,
         name: 'Notifications',
-        to: '',
+        to: 'Notifications',
         notifications: 3
-    },  
-]
+    },
+    {
+        icon: storefrontOutline,
+        name: 'Store Locator',
+        to: 'StoreLocator',
+        notifications: 0
+    },
+    {
+        icon: helpCircleOutline,
+        name: "FAQ's",
+        to: 'FAQs',
+        notifications: 0
+    },
+    {
+        icon: cartOutline,
+        name: 'My Orders',
+        to: 'Orders',
+        notifications: 0
+    },
+    {
+        icon: personOutline,
+        name: 'My Account',
+        to: 'Account',
+        notifications: 0
+    },
+    {
+        icon: heartOutline,
+        name: 'My Favorites',
+        to: 'Favorites',
+        notifications: 0
+    },
+    {
+        icon: locationOutline,
+        name: 'Order Tracker',
+        to: 'OrderTracker',
+        notifications: 0
+    },
+    {
+        icon: timeOutline,
+        name: 'Order History',
+        to: 'OrderHistory',
+        notifications: 0
+    },
+];

@@ -6,7 +6,7 @@
 
     </ion-header>
     <ion-content class="ion-padding">
-      <div class="flex flex-col">
+      <div class="flex flex-col mb-4">
         <div class="flex justify-between">
           <img class="rounded-full w-14 h-14" alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           <div class="w-[70%] flex items-center justify-around">
@@ -20,12 +20,20 @@
           <ion-text class="text-neutral-500 text-sm">+63 912 345 6789</ion-text>
         </div>
         <ion-list lines="none">
-          <ion-item  v-for="item in MENU" @click="navigate(item.to)" class="ion-no-padding py-1 items-center hover:!bg-red-50">
+          <ion-item  v-for="item in MENU.slice(0,5)" @click="navigate(`${item.to}`)" class="ion-no-padding py-1 items-center hover:!bg-red-50">
+            <ion-icon :icon="item.icon" color="primary"></ion-icon>
+            <ion-text class="ion-padding-start font-bold">{{item.name}}</ion-text>
+          </ion-item>
+        </ion-list>
+        <hr class="my-2 w-full"/>
+        <ion-list lines="none">
+          <ion-item  v-for="item in MENU.slice(5)" @click="navigate(item.to)" class="ion-no-padding py-1 items-center hover:!bg-red-50">
             <ion-icon :icon="item.icon" color="primary"></ion-icon>
             <ion-text class="ion-padding-start font-bold">{{item.name}}</ion-text>
           </ion-item>
         </ion-list>
       </div>
+      <Button text="Log out"/>
     </ion-content>
   </ion-menu>
   <ion-page id="main-content">
@@ -74,6 +82,7 @@
   import {
     useRouter
   } from "vue-router";
+  import Button from "../Button.vue";
   import {
     IonText,
     IonIcon,
@@ -108,6 +117,6 @@
   const router = useRouter();
 
   function navigate(link) {
-    router.push(link);
+    router.push(`/${link}`);
   }
 </script>
