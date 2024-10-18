@@ -38,21 +38,27 @@
   </ion-menu>
   <ion-page id="main-content">
     <div class="shadow-none p-4 flex justify-between items-center">
-      <div class="w-full flex items-center gap-2">
+      <div class="w-full flex flex-[2] items-center gap-2">
         <ion-buttons slot="start">
-          <ion-menu-toggle>
+          <div v-if="pageDefaultBackLink">
+            <ion-back-button
+              text=""
+              :default-href="pageDefaultBackLink"
+            ></ion-back-button>
+          </div>
+          <ion-menu-toggle v-else>
             <div class="flex flex-col gap-1">
               <div v-for="i in 2" :key="i" class="bg-red-600 w-6 rounded-full h-1"></div>
             </div>
           </ion-menu-toggle>
-          <ion-text class="ml-4 text-2xl font-bold">{{ props.title }}</ion-text>
+          <ion-text class="ml-4 text-2xl font-bold ">{{ props.title }}</ion-text>
         </ion-buttons>
       </div>
       <div v-show="props.type == 'default'" class="w-full flex items-center gap-2">
         <ion-img src="assets/images/crown1.png" />
         <ion-text class="text-normal font-bold">0 points</ion-text>
       </div>
-      <div class="w-full flex justify-end">
+      <div v-show="props.type == 'default' || props.type == 'order' " class="w-full flex justify-end">
         <ion-avatar v-show="props.type == 'default'" class="w-8 h-8">
           <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
@@ -93,6 +99,7 @@
     IonHeader,
     IonMenu,
     IonMenuToggle,
+    IonBackButton,
     IonButton,
     IonMenuButton,
     IonPage,
@@ -112,6 +119,10 @@
     },
     isOrder: {
       type: Boolean
+    },
+    pageDefaultBackLink: {
+      type: String,
+      required: false,
     },
   })
   const router = useRouter();

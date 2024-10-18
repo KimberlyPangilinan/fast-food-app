@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex flex-col justify-end p-2 border rounded-xl min-h-[16vh] bg-cover"
+    <div class="relative flex flex-col justify-end p-2 border rounded-2xl min-h-[16vh] bg-cover"
         :style="`background-image: url('${props.item.img}');height: ${props.height}; min-width: ${props.width};`">
         <ion-text class="text-lg text-white">{{ props.item.name }}</ion-text>
         <ion-text class="text-xs text-white" v-show="props.item.total">{{ props.item.total }} recipes</ion-text>

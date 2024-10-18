@@ -1,9 +1,9 @@
 <template>
-    <base-layout :key="$route.fullPath" type="order" title="Our Foods">
-        <div class="space-y-0 mt-[-10px]">
+    <base-layout :key="$route.fullPath" type="order" title="Our&nbsp;Foods">
+        <div class="space-y-0 mt-[-16px]">
         <!-- Search bar -->
         <ion-searchbar :debounce="1000" @ionInput="handleInput" class="custom" />
-        <div class="mx-4 flex overflow-scroll">
+        <div class="mx-2 flex overflow-scroll">
             <Button
             @click="handleFilter('')"
             :color="activeFilter=='' ? 'primary': 'tertiary'" 

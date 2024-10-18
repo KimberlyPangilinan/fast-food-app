@@ -1,5 +1,5 @@
 <template>
-    <div class="card overflow-hidden" @click="navigate(`products/${props.item.id}`)">
+    <div class="card !rounded-2xl overflow-hidden" @click="navigate(`products/${props.item.id}`)">
         <ion-card-content>
             <div class="h-[100px] flex items-center justify-center py-4">
                 <img class="w-[108px] object-cover" :src="props.item.img" />

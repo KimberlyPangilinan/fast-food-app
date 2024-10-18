@@ -1,5 +1,5 @@
 <template>
-    <section class="p-2">
+    <section>
         <h2 v-show="props.title" class="text-[20px] font-bold py-3">{{ props.title }} </h2>
         <div class="flex flex-wrap p-2 gap-2 justify-between ">
             <ProductCard 
