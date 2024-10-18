@@ -15,7 +15,8 @@
           <div class="w-[70%] flex items-center justify-around">
             <ion-img src="assets/images/crown1.png" />
             <ion-text class="text-normal font-bold">0 points</ion-text>
-            <ion-icon :icon="chevronForwardOutline" color="primary"></ion-icon>
+            <ion-icon :icon="chevronForwardOutline" color="primary" 
+            @click="navigate('loyalty')"></ion-icon>
           </div>
         </div>
         <div class="py-2">

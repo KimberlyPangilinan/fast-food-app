@@ -3,6 +3,7 @@ import HomePage from "../views/authenticated/HomePage.vue";
 import ProductsPage from "../views/authenticated/products/ProductsPage.vue";
 import ProductPage from "../views/authenticated/products/ProductPage.vue";
 import LoginPage from "../views/Login.vue";
+import LoyaltyPage from "../views/authenticated/LoyaltyPage.vue";
 import OrderPage from "../views/authenticated/order/OrderPage.vue";
 
 const routes = [
@@ -29,6 +30,11 @@ const routes = [
     path: "/order",
     name: "Order",
     component: OrderPage,
+  },
+  {
+    path: "/loyalty",
+    name: "Loyalty",
+    component: LoyaltyPage,
   },
   {
     path: "/login",
