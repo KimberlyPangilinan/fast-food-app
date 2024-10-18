@@ -49,7 +49,7 @@
           </ion-item>
         </ion-list>
       </div>
-      <Button text="Log out" />
+      <Button text="Log out" to="/login"/>
     </ion-content>
   </ion-menu>
   <!--  ----------------------------- Header Section -----------------------------  -->

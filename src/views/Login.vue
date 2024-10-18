@@ -35,7 +35,7 @@
         >Forgot Password?</ion-button
       >
     </ion-list>
-    <Button color="primary" text="Login" />
+    <Button color="primary" text="Login" to="/home"/>
     <Button text="Login as Guest" fill="clear" />
   </base-layout>
 </template>
