@@ -1,19 +1,19 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import HomePage from '../views/authenticated/HomePage.vue'
-import ProductsPage from '../views/authenticated/products/ProductsPage.vue'
-import ProductPage from '../views/authenticated/products/ProductPage.vue'
-import LoginPage from '../views/Login.vue'
-import OrderPage from '../views/authenticated/order/OrderPage.vue'
+import { createRouter, createWebHistory } from "@ionic/vue-router";
+import HomePage from "../views/authenticated/HomePage.vue";
+import ProductsPage from "../views/authenticated/products/ProductsPage.vue";
+import ProductPage from "../views/authenticated/products/ProductPage.vue";
+import LoginPage from "../views/Login.vue";
+import OrderPage from "../views/authenticated/order/OrderPage.vue";
 
 const routes = [
   {
-    path: '/',
-    redirect: '/home'
+    path: "/",
+    redirect: "/home",
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: HomePage
+    path: "/home",
+    name: "Home",
+    component: HomePage,
   },
   {
     path: "/products",
@@ -33,13 +33,13 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: LoginPage
+    component: LoginPage,
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

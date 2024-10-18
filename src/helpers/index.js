@@ -1,24 +1,25 @@
 import {
-    home,
-    pizzaOutline,
-    notificationsOutline,
-    storefrontOutline,
-    helpCircleOutline,
-    cartOutline,
-    personOutline,
-    heartOutline,
-    locationOutline,
-    timeOutline,
-  } from "ionicons/icons";
+  home,
+  pizzaOutline,
+  notificationsOutline,
+  storefrontOutline,
+  helpCircleOutline,
+  cartOutline,
+  personOutline,
+  heartOutline,
+  locationOutline,
+  timeOutline,
+} from "ionicons/icons";
 
 export const USER = {
-    fullName: "Chou Tzuyu",
-    address: "No. 21 St. Agustin Street, Brgy. De Jose Delgado City 2234 Philippines",
-    phone: "+63 912 345 6789",
-    emailAddress: "chou.tzu-yu@email.com",
-    office: "3rd flr Anyeong Bldg. Seareal St. Joaqin City 3456 Philippines",
-    avatar: "assets/images/b1a4b4540751fe5d0c07f47800c953b5c8fa9cdd_hq 1.png",
-}
+  fullName: "Chou Tzuyu",
+  address:
+    "No. 21 St. Agustin Street, Brgy. De Jose Delgado City 2234 Philippines",
+  phone: "+63 912 345 6789",
+  emailAddress: "chou.tzu-yu@email.com",
+  office: "3rd flr Anyeong Bldg. Seareal St. Joaqin City 3456 Philippines",
+  avatar: "assets/images/b1a4b4540751fe5d0c07f47800c953b5c8fa9cdd_hq 1.png",
+};
 
 export const SPECIAL_OFFERS = [
   {
@@ -165,17 +166,15 @@ export const BEVERAGES = [
     name: "Coke",
     id: 1,
   },
-  { 
-    name: "Sprite", 
-    id: 2 
+  {
+    name: "Sprite",
+    id: 2,
   },
-  { 
-    name: "Pineapple Juice", 
-    id: 3 
+  {
+    name: "Pineapple Juice",
+    id: 3,
   },
 ];
-
-
 
 export const MENU = [
   {
